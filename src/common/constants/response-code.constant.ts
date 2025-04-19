@@ -1,0 +1,38 @@
+export const HTTP_STATUS = {
+  OK: 200,
+  CREATED: 201,
+  BAD_REQUEST: 400,
+  UNAUTHORIZED: 401,
+  FORBIDDEN: 403,
+  NOT_FOUND: 404,
+  INTERNAL_SERVER_ERROR: 500,
+} as const;
+
+export const RESPONSE_CODE = {
+  // 성공 (2xx)
+  SUCCESS: 'SUCCESS',
+  CREATED: 'CREATED',
+
+  // 클라이언트 에러 (4xx)
+  BAD_REQUEST: 'BAD_REQUEST',
+  UNAUTHORIZED: 'UNAUTHORIZED',
+  FORBIDDEN: 'FORBIDDEN',
+  NOT_FOUND: 'NOT_FOUND',
+  VALIDATION_ERROR: 'VALIDATION_ERROR',
+
+  // 서버 에러 (5xx)
+  INTERNAL_SERVER_ERROR: 'INTERNAL_SERVER_ERROR',
+  SERVICE_UNAVAILABLE: 'SERVICE_UNAVAILABLE',
+} as const;
+
+export const RESPONSE_MESSAGE = {
+  [RESPONSE_CODE.SUCCESS]: '요청이 성공적으로 처리되었습니다.',
+  [RESPONSE_CODE.CREATED]: '리소스가 성공적으로 생성되었습니다.',
+  [RESPONSE_CODE.BAD_REQUEST]: '잘못된 요청입니다.',
+  [RESPONSE_CODE.UNAUTHORIZED]: '인증이 필요합니다.',
+  [RESPONSE_CODE.FORBIDDEN]: '접근이 거부되었습니다.',
+  [RESPONSE_CODE.NOT_FOUND]: '요청한 리소스를 찾을 수 없습니다.',
+  [RESPONSE_CODE.VALIDATION_ERROR]: '입력값이 유효하지 않습니다.',
+  [RESPONSE_CODE.INTERNAL_SERVER_ERROR]: '서버 내부 오류가 발생했습니다.',
+  [RESPONSE_CODE.SERVICE_UNAVAILABLE]: '서비스를 일시적으로 사용할 수 없습니다.',
+} as const;
